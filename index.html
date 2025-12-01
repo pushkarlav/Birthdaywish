@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bau!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+        <div class="stars"></div>
+        <div class="welcome-content">
+            <h1 class="welcome-title">Welcome</h1>
+            <h2 class="welcome-name">Priti Labh</h2>
+            <p class="welcome-subtitle">(Bau)</p>
+            <button class="btn-primary" onclick="showCakeScreen()">Continue</button>
+        </div>
+    </div>
+
+    <!-- Cake Screen -->
+    <div id="cake-screen" class="screen">
+        <div class="confetti-container"></div>
+        <div class="cake-content">
+            <h2 class="cake-title">Make a Wish!</h2>
+            <div class="cake-wrapper">
+                <div class="cake" id="birthday-cake">
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="cake-layer layer-1"></div>
+                    <div class="cake-layer layer-2"></div>
+                    <div class="cake-layer layer-3"></div>
+                </div>
+            </div>
+            <button class="btn-primary btn-cut" id="cut-cake-btn" onclick="cutCake()">Cut the Cake</button>
+        </div>
+    </div>
+
+    <!-- Balloons Screen -->
+    <div id="balloons-screen" class="screen">
+        <div class="balloons-container" id="balloons-container"></div>
+        <div class="celebration-message">
+            <h1 class="celebration-text">Hooray!</h1>
+        </div>
+    </div>
+
+    <!-- Messages Screen -->
+    <div id="messages-screen" class="screen">
+        <div class="sparkles"></div>
+        <div class="messages-container">
+            <div class="message-card active" data-message="1">
+                <div class="message-content">
+                    <img src="/images/birthday1.jpg" alt="Birthday celebration photo of Priti wearing Happy Birthday sash with yellow cake" class="message-image">
+                    <h2 class="message-text">Happy Birthday To You Bau</h2>
+                    <div class="icon-group">
+                        <span class="icon-text">🎂</span>
+                        <span class="icon-text">🎉</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-card" data-message="2">
+                <div class="message-content">
+                    <img src="https://placehold.co/600x400?text=Graduation+cap+and+books+with+inspiring+motivational+design" alt="Graduation cap and books with inspiring motivational design" class="message-image">
+                    <h2 class="message-text">Aagadi jata admission hetau nik se padhye badka aadmi bann</h2>
+                    <div class="icon-group">
+                        <span class="icon-text">❤️</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-card" data-message="3">
+                <div class="message-content">
+                    <img src="/images/birthday2.jpg" alt="Outdoor selfie of siblings showing bond and togetherness" class="message-image">
+                    <h2 class="message-text">I know I'm late because I didn't noticed the time.</h2>
+                    <p class="message-subtext">I'm sorry</p>
+                    <div class="icon-group">
+                        <span class="icon-text">😔</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-card" data-message="4">
+                <div class="message-content">
+                    <img src="https://placehold.co/600x400?text=Colorful+celebration+with+balloons+confetti+and+party+decorations" alt="Colorful celebration with balloons confetti and party decorations" class="message-image">
+                    <h2 class="message-text">Once again,</h2>
+                    <h1 class="message-highlight">Happy Birthday Bakho</h1>
+                    <div class="icon-group">
+                        <span class="icon-text">🎂</span>
+                        <span class="icon-text">🎉</span>
+                        <span class="icon-text">🥳</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="nav-btn" id="prev-btn" onclick="previousMessage()">
+                    <span>← Previous</span>
+                </button>
+                <div class="message-indicator">
+                    <span id="current-message">1</span> / 4
+                </div>
+                <button class="nav-btn" id="next-btn" onclick="nextMessage()">
+                    <span>Next →</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
