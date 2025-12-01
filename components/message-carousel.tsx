@@ -28,8 +28,9 @@ const messages = [
   },
   {
     id: 4,
-    text: "Once again, Happy Birthday Bakho <br> Made with Love ❤️",
+    text: "Once again, Happy Birthday Bakho",
     emoji: "🎂🎉🥳",
+    text2: "Made with Love ❤️",
     image: "/birthday4.jpg",
     secondImage: null,
   },
@@ -175,6 +176,13 @@ export function MessageCarousel() {
               />
             ))}
           </div>
+
+          {/* Made with Love text at the very bottom */}
+          {currentMessage.text2 && (
+            <div className="mt-8 text-center">
+              <p className="text-2xl font-semibold text-pink-500">{currentMessage.text2}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

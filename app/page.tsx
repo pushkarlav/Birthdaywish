@@ -92,7 +92,6 @@ export default function BirthdayPage() {
         </div>
       )}
 
-      <div className="fixed bottom-2 left-2 text-xs text-white/50 z-50">Music by saavane from Pixabay</div>
     </main>
   )
 }
