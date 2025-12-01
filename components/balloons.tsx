@@ -10,7 +10,22 @@ export function Balloons() {
           key={i}
           className="absolute animate-float-up"
           style={{
-            left: `${Math.random() * 100}%`,
+            // Prevent balloons from appearing over the image
+            left: (() => {
+              let leftPos = Math.random() * 100;
+
+              // The image is in the center (30%–70%). Avoid this region.
+              if (leftPos > 30 && leftPos < 70) {
+                // If balloon falls inside forbidden zone, push it out
+                if (leftPos < 50) {
+                  leftPos = Math.random() * 30;           // left side (0–30)
+                } else {
+                  leftPos = 70 + Math.random() * 30;      // right side (70–100)
+                }
+              }
+
+              return `${leftPos}%`;
+            })(),
             bottom: "-10%",
             animationDelay: `${Math.random() * 2}s`,
             animationDuration: `${4 + Math.random() * 2}s`,

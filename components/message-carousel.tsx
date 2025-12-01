@@ -70,31 +70,13 @@ export function MessageCarousel() {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 overflow-hidden">
-      {/* Floating hearts */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute animate-float-hearts"
-            style={{
-              left: `${(i * 17) % 100}%`,
-              bottom: "-5%",
-              animationDelay: `${(i * 0.25) % 5}s`,
-              animationDuration: `${6 + (i * 0.2) % 4}s`,
-            }}
-          >
-            <span className="text-4xl opacity-40">💖</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Message card */}
+      {/* Message card container */}
       <div
         className={`relative z-10 max-w-4xl w-full mx-4 transition-all duration-500 transform ${
           isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-4"
         }`}
       >
-        <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12 border-4 border-purple-400">
+        <div className="messages-container bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12 border-4 border-purple-400 relative z-10">
           {/* Message number */}
           <div className="text-center mb-6">
             <span className="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full text-lg font-bold">
@@ -106,7 +88,7 @@ export function MessageCarousel() {
             <div className="mb-4 flex flex-col items-center max-h-96 overflow-y-auto">
               {currentMessage.image && (
                 <div className="mb-2 w-full max-w-md">
-                  <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-purple-300 animate-scale-in">
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-purple-300 animate-scale-in no-balloon-zone">
                     <img
                       src={currentMessage.image} onError={(e) => {e.currentTarget.onerror=null; e.currentTarget.src="/placeholder.svg"; }}
                       alt="Birthday memory"
@@ -118,7 +100,7 @@ export function MessageCarousel() {
               )}
               {currentMessage.secondImage && (
                 <div className="w-full max-w-md">
-                  <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-purple-300 animate-scale-in">
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-purple-300 animate-scale-in no-balloon-zone">
                     <img
                       src={currentMessage.secondImage} onError={(e) => {e.currentTarget.onerror=null; e.currentTarget.src="/placeholder.svg"; }}
                       alt="Birthday memory"

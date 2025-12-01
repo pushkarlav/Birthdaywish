@@ -107,7 +107,7 @@ module.exports = {
         },
       },
       animation: {
-        'float-up': 'float-up 4s linear forwards',
+        'float-up': 'float-up 8s linear infinite',
         'float-hearts': 'float-hearts 5s linear infinite',
         'confetti': 'confetti 3s linear forwards',
         'twinkle': 'twinkle 3s infinite',
